@@ -64,7 +64,7 @@ onIntent = (intentRequest, session, callback) ->
   if "SayHelloIntent" is intentName
     sayHello(intent, session, callback)
   else
-	throw "Invalid intent"
+    throw "Invalid intent"
 	
 ###
   Called when the user ends the session.
@@ -83,7 +83,7 @@ buildSpeechletResponse = (title, output, repromptText, shouldEndSession) ->
       type: "PlainText"
       text: output
     card:
-      type: "Simple",
+      type: "Simple"
       title: "SessionSpeechlet - #{title}"
       content: "SessionSpeechlet - ${output}"
     reprompt:
