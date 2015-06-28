@@ -109,7 +109,7 @@ helloAlexa = (callback) ->
   callback(sessionAttributes, buildSpeechletResponse(cardTitle, speechOutput, repromptText, shouldEndSession))
 
 sayHello = (intent, session, callback) ->
-  cardTitle = "Hello #{intent.slots.Name}"
+  cardTitle = "Hello #{intent.slots.Name.value}"
   nameSlot = intent.slots.Name
   repromptText = ""
   sessionAttributes = {}
@@ -117,7 +117,7 @@ sayHello = (intent, session, callback) ->
   speechOutput = ""
   
   if nameSlot
-    speechOutput = "Hello #{nameSlot}, nice to meet you."
+    speechOutput = "Hello #{nameSlot.value}, nice to meet you."
     sessionAttributes = {nameSlot: nameSlot}
     shouldEndSession = true
   else
